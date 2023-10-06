@@ -6,4 +6,4 @@ AllCops:
     - 'config/**/*'
     - 'db/**/*'
     - 'vendor/**/*'
-    - 'spec/spec_helper'
+    - 'spec/spec_helper.rb'
