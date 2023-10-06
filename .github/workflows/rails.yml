@@ -21,4 +21,4 @@ jobs:
         run: ruby -v
 
       - name: Run lint
-        run: bundle exec rubocop
+        run: bundle exec rubocop -C false
