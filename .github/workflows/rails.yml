@@ -3,7 +3,7 @@ on:
   push:
 
 jobs:
-  Job-Rubocop:
+  Rubocop:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -22,3 +22,23 @@ jobs:
 
       - name: Run lint
         run: bundle exec rubocop -C false
+
+  RSpec:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Ruby Env
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2.2'
+          bundler-cache: true
+
+      - name: Show ruby version
+        run: ruby -v
+
+      - name: Run tests
+        run: bundle exec rspec 
