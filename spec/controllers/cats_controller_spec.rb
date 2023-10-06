@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 describe 'CatsController' do
   describe 'show' do
     it do
