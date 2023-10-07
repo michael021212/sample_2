@@ -1,6 +1,6 @@
 name: Run Rubocop and RSpec
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   # push:
 
 # concurrencyを設定して、ワークフローが複数同時実行されないように制御する
