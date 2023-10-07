@@ -20,7 +20,7 @@ on:
         type: environment
         required: true
 
-# concurrencyを設定して、ワークフローが複数同時実行されないように制御する
+# concurrencyを設定してワークフローが複数同時実行されないように制御する
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
