@@ -1,5 +1,6 @@
 name: Run Rubocop and RSpec
 on:
+  push:
   workflow_dispatch:
     inputs:
       logLevel:
