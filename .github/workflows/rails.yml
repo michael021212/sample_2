@@ -2,7 +2,7 @@ name: Run Rubocop and RSpec
 on:
   push:
 
-# concurrencyを設定してワークフローが複数同時実行されないように制御する
+# concurrencyを設定してワークフロー が複数同時実行されないように制御する
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
