@@ -64,9 +64,19 @@ jobs:
       - name: Show ruby version
         run: ruby -v
 
-      - name: Run tests
-        run: bundle exec rspec
-        env:
-          LEVEL: ${{ inputs.logLevel }}
-          TAGS: ${{ inputs.tags }}
-          ENVIRONMENT: ${{ inputs.environment }}
+      # - name: Run tests
+      #   run: bundle exec rspec
+      #   env:
+      #     LEVEL: ${{ inputs.logLevel }}
+      #     TAGS: ${{ inputs.tags }}
+      #     ENVIRONMENT: ${{ inputs.environment }}
+
+      - name: Test
+        run: bundle exec rspec -f j -o tmp/rspec_results.json -f p
+
+      - name: RSpec Report
+        uses: SonicGarden/rspec-report-action@v1
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          json-path: tmp/rspec_results.json
+        if: always()
