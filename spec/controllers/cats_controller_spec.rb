@@ -6,7 +6,7 @@ describe 'CatsController' do
     end
   end
 
-  describe 'show' do
+  describe  'show' do
     it do
       answer = 3
       expect(2 + 1).to eq answer
